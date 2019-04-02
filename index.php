@@ -6,8 +6,10 @@
 	</head>
 
 	<body>
-		<h1>Hallo Wereld</h1>
-		<p>Wij zijn de makers van deze site</p>
-		<p>biertje</p>
+		<main>
+			<artcile>
+				
+			</artcile>
+		</main>
 	</body>
 </html>
