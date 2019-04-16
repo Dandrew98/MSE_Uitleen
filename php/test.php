@@ -18,7 +18,7 @@ if (mysqli_num_rows($uitlees) > 0)
 	echo "<table border='1'>";
 
 	// start en tabelrij voor de knopjes
-	echo"<tr>";
+	echo "<tr>";
 
 	//maak de cellen voor de kopjes
 	echo "<th>Naam</th>";
@@ -62,11 +62,11 @@ if (mysqli_num_rows($uitlees) > 0)
 			//maak de cellen voor de gegevens
 			echo "<td>" . $row['naam'] . "</td>";
 			echo "<td>" . $row['type'] . "</td>";
-			echo "<td>" . $row['omschrijving'] . "</td>";
+			echo "<td>&nbsp;</td>";
 			echo "<td>" . $row['reeks'] . "</td>";
 			echo "<td>" . $row['artikel_nr'] . "</td>";
-			echo "<td>" . $row['datum_uitleen'] . "</td>";
-			echo "<td>" . $row['datum_retour'] . "</td>";
+			echo "<td>&nbsp;</td>";
+			echo "<td>&nbsp;</td>";
 			echo "<td>" . $row['opmerkingen'] . "</td>";
 			$defect = "Ja";
 			echo "<td>" . $defect . "</td>";
