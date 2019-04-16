@@ -7,9 +7,9 @@
 
 	<body>
 		<main>
-			<artcile>
+			<article>
 				
-			</artcile>
+			</article>
 		</main>
 	</body>
 </html>
