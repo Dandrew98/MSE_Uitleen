@@ -10,7 +10,7 @@ ini_set('display_errors', 1);
 JOIN tbl_product_detail pd on p.id = pd.product_id
 join tbl_uitlenen u on pd.id = u.id_product_detail where k.klant_nr = u.id_klant";**/
 //alle producten laten zien die niet in uitleen staan
-$query = "SELECT p.naam, pd.type, pd.omschrijving, pd.reeks, pd.artikel_nr, pd.defect FROM tbl_uitlenen u, tbl_product p
+$query = "SELECT p.naam, p.type, p.omschrijving, pd.info, pd.reeks, pd.artikel_nr, pd.defect FROM tbl_uitlenen u, tbl_product p
 JOIN tbl_product_detail pd on p.id = pd.product_id where pd.id != u.id_product_detail";
 
 $uitlees = mysqli_query($mysqli, $query);
@@ -27,6 +27,7 @@ if (mysqli_num_rows($uitlees) > 0)
 	echo "<th>Naam</th>";
 	echo "<th>Type</th>";
 	echo "<th>Omschrijving</th>";
+	echo "<th>Algemene opmerking&lpar;en&rpar;</th>"
 	echo "<th>Reeks</th>";
 	echo "<th>Artikel nummer</th>";
 	echo "<th>Defect</th>";
@@ -49,6 +50,7 @@ if (mysqli_num_rows($uitlees) > 0)
 			echo "<td>" . $row['naam'] . "</td>";
 			echo "<td>" . $row['type'] . "</td>";
 			echo "<td>" . $row['omschrijving'] . "</td>";
+			echo "<td>" . $row['info'] . "</td>";
 			echo "<td>" . $row['reeks'] . "</td>";
 			echo "<td>" . $row['artikel_nr'] . "</td>";
 			echo "<td>" . $defect . "</td>";
@@ -60,6 +62,7 @@ if (mysqli_num_rows($uitlees) > 0)
 			echo "<td>" . $row['naam'] . "</td>";
 			echo "<td>" . $row['type'] . "</td>";
 			echo "<td>&nbsp;</td>";
+			echo "<td>" . $row['info'] . "</td>";
 			echo "<td>" . $row['reeks'] . "</td>";
 			echo "<td>" . $row['artikel_nr'] . "</td>";
 			echo "<td>&nbsp;</td>";
