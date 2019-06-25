@@ -4,6 +4,8 @@ require "config_uitleen.php";
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+$query = "SELECT p.naam, p.type, p.omschrijving, pd.info, pd.reeks, pd.artikel_nr, pd.defect FROM tbl_uitlenen u, tbl_product p
+JOIN tbl_product_detail pd on p.id = pd.product_id where pd.id != u.id_product_detail";
 
 $uitlees = mysqli_query($mysqli, $query);
 
